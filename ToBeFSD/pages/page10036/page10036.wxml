@@ -1,0 +1,101 @@
+<view class="app">
+<template name="zcPicture">
+  <block wx:if="{{real_value}}">
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{real_value}}"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{data.content}}"></image>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcPicture" data="{{data:picture1, real_value:real_value.form_data.FET_picture}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.FET_picture && !vessel_page_data.form_data.FET_picture}}">
+    <template is="zcPicture" data="{{data:picture1, real_value:detail_data.FET_picture}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.FET_picture}}">
+      <template is="zcPicture" data="{{data:picture1, real_value:vessel_page_data.form_data.FET_picture}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcPicture" data="{{data:picture1, real_value:item.form_data.FET_picture}}"></template>
+  </block>
+</view><import src="../../components/wxParse/wxParse.wxml"/>
+<template name="zcText">
+  <block wx:if="{{real_value}}">
+	  <block wx:if="{{real_value.join !== undefined}}">
+      <view class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+	      <view class="wxParse">
+	        <template is="wxParse" data="{{wxParseData: real_value}}"/>
+	      </view>
+	    </view>
+	   </block>
+	  <block wx:else>
+	    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{real_value}}</text>
+	  </block>
+  </block>
+  <block wx:else>
+    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{data.content}}</text>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text2, real_value:real_value.form_data.lx}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.lx && !vessel_page_data.form_data.lx}}">
+    <template is="zcText" data="{{data:text2, real_value:detail_data.lx}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.lx}}">
+      <template is="zcText" data="{{data:text2, real_value:vessel_page_data.form_data.lx}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text2, real_value:item.form_data.lx}}"></template>
+  </block>
+</view>
+<template name="zcCountEle">
+  <block wx:if="{{!!form}}">
+    <view class="element count-ele" style="{{data.style}}" data-form="{{form}}" data-objrel="{{form}}_{{data_id}}{{!!data.ifAutoCount? '_view': ''}}" data-index="{{index}}" catchtap="changeCount" data-compid="count_ele3" data-counted="{{has_count}}" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{count_num}}</label>
+    </view>
+  </block>
+
+  <block wx:elif="{{!!data.ifAutoCount}}">
+    <view class="element count-ele" style='{{data.style}}' animation="{{data.animations}}" data-objrel="{{data.objrel}}" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{data.count_data.has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{data.count_data.count_num}}</label>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element count-ele" style='{{data.style}}' animation="{{data.animations}}" data-compid="{{data.compId}}" data-counted="{{data.count_data.has_count}}" data-objrel="{{data.objrel}}" catchtap="changeCount" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{data.count_data.has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{data.count_data.count_num}}</label>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <template is="zcCountEle" data="{{data:count_ele3,index:index,data_id:item.id,count_num:item.count_num,form:item.form,has_count:item.has_count,compId:item.compId}}"></template>
+</view>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text4, real_value:real_value.form_data.gs}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.gs && !vessel_page_data.form_data.gs}}">
+    <template is="zcText" data="{{data:text4, real_value:detail_data.gs}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.gs}}">
+      <template is="zcText" data="{{data:text4, real_value:vessel_page_data.form_data.gs}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text4, real_value:item.form_data.gs}}"></template>
+  </block>
+</view>
+
+</view>

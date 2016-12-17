@@ -1,0 +1,398 @@
+﻿PHP和MySQL Web开发    8.4
+Luke Welling/Laura Thomson
+2009
+本书将PHP开发与MySQL应用相结合，分别对PHP和MySQL做了深入浅出的分析，不仅介绍PHP和MySQL的一般概念，而且对PHP和MySQL的Web应用做了较全面的阐述，并包括几个经典且实用的例子。.
+本书是第4版，经过了全面的更新、重写和扩展，包括PHP 5.3最新改进的特性（例如，更好的错误和异常处理），MySQL的存储过程和存储引擎，Ajax技术与Web 2.0以及Web应用需要注意的安全问题。
+
+
+
+Linux高性能服务器编程     8.0
+游双
+2013-5-1
+本书是Linux服务器编程领域的经典著作，由资深Linux软件开发工程师撰写，从网络协议、服务器编程核心要素、原理机制、工具框架等多角度全面阐释了编写高性能Linux服务器应用的方法、技巧和思想。不仅理论全面、深入，抓住了重点和难点，还包含两个综合性案例，极具实战意义。
+全书共17章，分为3个部分：第一部分对Linux服务器编程的核心基础——TCP/IP协议进行了深入的解读和阐述，包括TCP/IP协议族、TCP/IP协议，以及一个经典的TCP/IP通信案例；第二部分对高性能服务器编程的核心要素进行了全面深入的剖析，包含Linux网络编程API、高级I/O函数、Linux服务器程序规范、高性能服务器程序框架、I/O复用、信号、定时器、高性能I/O框架库Libevent、多进程编程、多线程编程、进程池和线程池等内容，原理、技术与方法并重；第三部分从侧重实战的角度讲解了高性能服务器的优化与监测，包含服务器的调制、调试和测试，以及各种实用系统监测工具的使用等内容。
+
+
+
+
+Java编程思想   9.0
+[美] Bruce Eckel 
+2005-9
+本书赢得了全球程序员的广泛赞誉，即使是最晦涩的概念，在Bruce Eckel的文字亲和力和小而直接的编程示例面前也会化解于无形。从Java的基础语法到最高级特性（深入的面向对象概念、多线程、自动项目构建、单元测试和调试等），本书都能逐步指导你轻松掌握。
+从本书获得的各项大奖以及来自世界各地的读者评论中，不难看出这是一本经典之作。本书的作者拥有多年教学经验，对C、C++以及Java语言都有独到、深入的见解，以通俗易懂及小而直接的示例解释了一个个晦涩抽象的概念。本书共22章，包括操作符、控制执行流程、访问权限控制、复用类、多态、接口、通过异常处理错误、字符串、泛型、数组、容器深入研究、Java I/O系统、枚举类型、并发以及图形化用户界面等内容。这些丰富的内容，包含了Java语言基础语法以及高级特性，适合各个层次的Java程序员阅读，同时也是高等院校讲授面向对象程序设计语言以及Java语言的绝佳教材和参考书。
+
+
+
+Python学习手册   8.2
+Mark Lutz 
+2009-8
+《Python学习手册(第3版)》讲述了：Python可移植、功能强大、易于使用，是编写独立应用程序和脚本应用程序的理想选择。无论你是刚接触编程或者刚接触Python，通过学习《Python学习手册(第3版)》，你可以迅速高效地精通核心Python语言基础。读完《Python学习手册(第3版)》，你会对这门语言有足够的了解，从而可以在你所从事的任何应用领域中使用它。
+《Python学习手册(第3版)》是作者根据过去10年用于教学而广为人知的培训课程的材料编写而成的。除了有许多详实说明和每章小结之外，每章还包括一个头脑风暴：这是《Python学习手册(第3版)》独特的一部分，配合以实用的练习题和复习题，让读者练习新学的技巧并测试自己的理解程度。
+《Python学习手册(第3版)》包括：
+类型和操作——深入讨论Python主要的内置对象类型：数字、列表和字典等。
+语句和语法——在Python中输入代码来建立并处理对象，以及Python一般的语法模型。
+函数——Python基本的面向过程工具，用于组织代码和重用。
+模块——封装语句、函数以及其他工具，从而可以组织成较大的组件。
+类和OOP——Python可选的面向对象编程工具，可用于组织程序代码从而实现定制和重用。
+异常和工具——异常处理模型和语句，并介绍编写更大程序的开发工具。
+讨论Python 3.0。
+《Python学习手册(第3版)》让你对Python语言有深入而完整的了解，从而帮助你理解今后遇到的任何Python应用程序实例。如果你准备探索Google和YouTube为什么选中了Python，《Python学习手册(第3版)》就是你入门的最佳指南。
+
+
+
+
+
+恰如其分的软件架构    7.4
+George Fairbanks 
+2013-9-1
+本书描述了一种恰如其分的软件架构设计方法。作者建议根据项目面临的风险来调整架构设计的成本，并从多个视角阐述了软件架构的建模过程和方法，包括用例模型、概念模型、域模型、设计模型和代码模型等。本书不仅介绍方法，而且还对方法和概念进行了归类和阐述，将软件架构设计融入开发实践中，与 敏捷开发方法有机地结合在一起，适合普通程序员阅读。
+
+
+
+JavaScript高级程序设计   9.3
+[美] Nicholas C. Zakas
+2012-3-29
+本书是JavaScript 超级畅销书的最新版。ECMAScript 5 和HTML5 在标准之争中双双胜出，使大量专有实现和客户端扩展正式进入规范，同时也为JavaScript 增添了很多适应未来发展的新特性。本书这一版除增加5 章全新内容外，其他章节也有较大幅度的增补和修订，新内容篇幅约占三分之一。全书从JavaScript 语言实现的各个组成部分——语言核心、DOM、BOM、事件模型讲起，深入浅出地探讨了面向对象编程、Ajax 与Comet 服务器端通信，HTML5 表单、媒体、Canvas（包括WebGL）及Web Workers、地理定位、跨文档传递消息、客户端存储（包括IndexedDB）等新API，还介绍了离线应用和与维护、性能、部署相关的最佳开发实践。本书附录展望了未来的API 和ECMAScript Harmony 规范。
+本书适合有一定编程经验的Web 应用开发人员阅读，也可作为高校及社会实用技术培训相关专业课程的教材。
+
+
+
+
+
+
+JavaScript DOM编程艺术   8.8
+[英] Jeremy Keith / [加] Jeffrey Sambells
+2011-4
+JavaScript是Web开发中最重要的一门语言，它强大而优美。无论是桌面开发，还是移动应用。JavaScript都是必须掌握的技术。W3C的DOM标准是开发Web应用的基石。已经得到所有现代浏览器的支持，这使得跨平台Web开发成了一件轻松惬意的事。
+本书是超级畅销书的升级版，由倡导Web标准的领军人物执笔，揭示了前端开发的真谛，是学习JavaScript和DOM开发的必读之作。
+本 书在简洁明快地讲述JavaScript和DOM的基本知识之后，通过几个实例演示了专业水准的网页开发技术，透彻阐述了平稳退化等一批至关重要的 JavaScript编程原则和最佳实践，并全面探讨了HTML5以及jQuery等JavaScript库。读者将看到JavaScript、 HTML5和CSS如何协作来创建易用的、与标准兼容的Web设计，掌握使用JavaScript和DOM通过客户端动态效果和用户控制的动画来加强 Web页面的必备技术；同时，还将对如何利用库提高开发效率有全面深入的理解。
+
+
+
+
+
+图解CSS3    6.9
+廖伟华 
+2014-7-1
+本书是CSS3领域的标准性著作，由资深Web前端工程师根据CSS3的最新技术标准撰写。内容极为全面、丰富和翔实，由浅入深地讲解了CSS3新特性的语法、功能和使用技巧，涵盖选择器、边框、背景、文本、颜色、UI、动画、新型盒模型、媒体查询、响应式设计等各种模块；写作方式创新，有趣且易懂，用图解的方式来描述CSS3的每一个特性甚至每一个步骤都配有实战效果图；包含大量案例，实战性强，每个特性都有作者从实践中精心归纳和挑选出来的案例辅助讲解，同时还包含一个综合性的大案例。无论你是完全没有经验的准前端工程师，还是已经有一定经验的前端工程师，如果你想系统学习CSS3，那么本书将会是你的最佳选择；如果你是一位成熟的前端开发工程师，但时常为如何合理地使用某些特性而费时去查阅相关资料，那么本书也是你的不二选择。
+
+
+
+
+
+文章：
+
+
+
+如何解决JsonObject无序的问题
+
+最近做一个项目解析json数据的时候遇到了json无序的问题，网上搜了半天没找到办法，只能自己想办法了。 
+先看json数据：
+ {
+     "1": "尺码",
+     "2": "款式",
+     "3": "颜色"
+ }
+我就想按照顺序输出：
+1:尺码 2:款式 3:颜色
+但是经常输出是无序的。 
+我的解决办法思路是这样的：先将json解析成链表，然后重新排序一下，具体代码如下：
+定义一个modle 用来存储每一个item.
+public class SpecEntity implements Comparable<SpecEntity>{
+    private int id;
+    private String spec;
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getSpec() {
+        return spec;
+    }
+    public void setSpec(String spec) {
+        this.spec = spec;
+    }
+    @Override
+    public int compareTo(SpecEntity o) {
+        if(this.id < o.getId()){
+            return -1;
+        }else if(this.id == o.getId()){
+            return 0;
+        }else if(this.id > o.getId()){
+            return 1;
+        }
+        return 0;
+    }
+
+}
+将json数据解析成链表，代码如下：
+private ArrayList<SpecEntity> getJsonList(String jsonStr){
+    ArrayList<SpecEntity>specList = new ArrayList<SpecEntity>();
+        try {
+            JSONObject spec_nameJSONObject = new JSONObject(jsonStr);
+            Iterator<String> spec_nameIterator = spec_nameJSONObject.keys();
+            while (spec_nameIterator.hasNext()) {
+                String key = spec_nameIterator.next();
+                SpecEntity apecEntity = new SpecEntity();
+                apecEntity.setSpecKey(key);
+                apecEntity.setSpecValue(spec_nameJSONObject.getString(key));
+                specList.add(apecEntity);
+            }
+            //看到没这个才是重点！！！！！！
+            Collections.sort(agentGoodsDetailSpaceBean.getSpec_name());
+        } catch (Exception e) {
+            DebugLogUtil.getInstance().Error(e.toString());
+        }
+    return specList;
+}
+大家看明白没?下面这句话才是重点，先将json解析成链表，然后给链表排序：
+Collections.sort(specList);
+
+
+
+
+
+数据库的唯一索引
+
+唯一索引是不允许表中任何两行具有相同索引值的索引。
+   当现有的数据中存在重复的键值时，大多数数据库不允许把新创建的唯一索引与表一起保存。数据库还可能防止添加将在表中创建重复键值的新数据。主键索引数据库表经常有一列或列组合，其值唯一标识表中的每一行。该列称为表的主键。在数据库关系图中为表定义主键将自动创建主键索引，主键索引是唯一索引的特定类型。该索引要求主键中的每个值都唯一。当在查询中使用主键索引时，它还允许对数据的快速访问。在聚集索引中，表中行的物理顺序与键值的索引顺序相同。一个表只能包含一个聚集索引。
+如果某索引不是聚集索引，则表中行的物理顺序与键值的逻辑顺序不匹配。与非聚集索引相比，聚集索引通常提供更快的数据访问速度。
+
+
+
+
+
+
+Debug命令，PC的早期开山老祖
+
+Debug原意是杀虫子，这里是机器调试工具。Debug的由来，有一则趣闻，在早期美国的一计算机房中，科学家正在紧张的工作。同时，许多台大型的计算机也在不停的运行着。大概是由于，机器过热，引来许的小虫子，以至于，计算机无法正常运行。科学们，只好停下来，捉虫子…虫子捉完了，计算机运行也正常了，后来，这个名词就沿用至今了…
+　　虽然，现在好的软件越来越多了，但是有些，我们只需动手，用Debug就可解决，且快而好！接下来，我们就一起学习Debug在各方面的运用吧！（在杀毒、加解密、系统…）下面我和大家一起学习一些，Debug的用法，虽然，现在好的软件越来越多了，但是有些，我们只需动手，用Debug就可解决，且快而好！
+　　Debug常用命令集
+　　名称 解释 格式
+　　a （Assemble） 逐行汇编 a [address]
+　　c （Compare） 比较两内存块 c range address
+　　d （Dump） 内存16进制显示 d [address]或 d [range]
+　　e （Enter） 修改内存字节 e address [list]
+　　f （fin） 预置一段内存 f range list
+　　g （Go） 执行程序 g [=address][address…]
+　　h （Hexavithmetic） 制算术运算 h value value
+　　i （Input） 从指定端口地址输入 i pataddress
+　　l （Load） 读盘 l [address [driver seetor>
+　　m （Move） 内存块传送 m range address
+　　n （Name） 置文件名　 n filespec [filespec…]
+　　o （Output） 从指定端口地址输出 o portadress byte
+　　q （Quit） 结束　 q
+　　r （Register） 显示和修改寄存器 r [register name]
+　　s （Search） 查找字节串　 s range list
+　　t （Trace） 跟踪执行　 t [=address] [value]
+　　u （Unassemble） 反汇编 u [address ]或range
+　　w （Write） 存盘　 w [address[driver sector secnum>。
+　　一、DEBUG程序的调用
+　　在DOS的提示符下，可键入命令：
+　　C:\DEBUG [D:][PATH][FILENAME[.EXT>[PARM1][PARM2]
+　　其中，文件名是被调试文件的名字。如用户键入文件，则DEBUG将指定的文件装入存储器中，用户可对其进行调试。如果未键入文件名，则用户可以用当前存储器的内容工作，或者用DEBUG命令N和L把需要的文件装入存储器后再进行调试。命令中的D指定驱动器PATH为路径，PARM1和PARM2则为运行被调试文件时所需要的命令参数。
+　　在DEBUG程序调入后，将出现提示符，此时就可用DEBUG命令来调试程序。
+　　二、DEBUG的主要命令
+　　1、显示存储单元的命令D（DUMP）
+　　2、修改存储单元内容的命令有两种。
+　　输入命令E（ENTER），有两种格式如下：
+　　第一种格式可以用给定的内容表来替代指定范围的存储单元内容。
+　　第二种格式则是采用逐个单元相继修改的方法。
+　　3）检查和修改寄存器内容的命令R（register
+　　4）运行命令G
+　　5）跟踪命令T（Trace），有两种格式：
+　　·逐条指令跟踪
+　　·多条指令跟踪
+　　6）汇编命令A（Assemble
+　　7）反汇编命令U（Unassemble）有两种格式。
+　　·从指定地址开始，反汇编32个字节
+　　·对指定范围内的存储单元进行反汇编，格式为：
+　　8）命名命令N（Name
+　　9）装入命令（Load），有两种功能。
+　　10）写命令W（Write
+　　11）退出DEBUG命令Q
+　　以上内容为Debug，PC的早期开山老祖，希望能帮到您。
+
+
+
+
+
+
+
+
+
+
+VPS是什么意思？VPS详解
+
+伴随着国内EA智能交易的兴起，VPS技术在外汇零售交易领域的应用也在逐渐扩大，那么什么是VPS技术？它又能带给交易者怎样的好处，我们今天和大家聊聊这个话题。
+　　什么是VPS？
+　　VPS（Virtual Private Server 虚拟专用服务器）技术，将一部服务器分割成多个虚拟专享服务器的优质服务。 每个VPS都可分配独立公网IP地址、独立操作系统、独立超大空间、独立内存、独立CPU资源、独立执行程序和独立系统配置等。 用户除了可以分配多个虚拟主机及无限企业邮箱外，更具有独立服务器功能，可自行安装程序，单独重启服务器。（来源于百度）
+　　通俗的解释：说的简单一点，VPS也相当于一台电脑，是服务商提供给你的一台电脑，但我们只有操作它的权利，并没有实物给你，在VPS上的操作就和我们操作家里的电脑是一样的。
+　　一句话，你可以把它当做虚拟电脑来使用，当然它不仅仅是虚拟电脑。
+　　VPS的优点？
+　　使用VPS有哪些优点呢，在我看来主要有两点，一点是可以全天候24小时运行，另外就是可以降低延迟，其他的优点手机可远程控制，最后就是省电。
+　　1.低延迟
+　　延迟是指发送消息至经纪商/流动性提供方服务器所需时间的计算，通常是以毫秒为计量单位。
+　　如果您在使用业界比较流行的EA交易策略，可能在您下单的同时有着成千上万的用户在用同样的EA交易策略进行自动化操作。
+　　即便您不是MT4的EA用户，在标的市场出现显著行情的时候，您在平台手动操控的同时也可能有许多用户在进行同样的操作。 对于外汇或差价合约市场而言，在标的市场因波动而扩大点差前，通常只存在相对有限的流动空间供零售客户抓取。此时，您的延迟越低，您的订单将有更大可能性成交于相对最好的价格，从而更容易实现交易的盈利。
+　　2.VPS全天候运行
+　　习惯用EA交易外汇（智能化交易）的朋友都知道，EA是需要全天24小时运行的，而对于我们大多数人家里的电脑来说，这个是很大的负担，因为配置性能的原因，而且如果你家里只有一台电脑的话，我们可能还会用来看看新闻，看看电影，聊聊QQ，等等动作，这都会降低电脑的运行动作和网速，而这个对我们MT4和EA的正常运行是有很大影响的，我们家里的电脑在运行一段时间后就会出现卡机，甚至断网的情况，这样就必须重启电脑，重新启动MT4，乃至我们的EA。 如你使用了VPS，那么这一切都不用担心了，VPS在性能和配置上，尤其网速上都远远高于家里的个人电脑，所以24小时都能正常运行你的EA程序，因为VPS上你只运行了MT4、专家信号系统、自助跟单系统，所以负担是很轻的，并不会出现卡机、断网的现象。这就是我们使用EA交易要选择VPS的原因了。
+　　如何使用VPS？
+　　VPS你可以自己去付费购买，也可以从经纪商那边获得，一般经纪商会有一些政策给你免费的VPS，当然VPS有便宜的也有贵的，小机构和个人可以用小型的，大机构用大型的。获得使用权以后，你会得到一个服务器的IP地址和登录密码。
+　　登录VPS：
+　　1.首先在你的电脑上按组合键：windows+R（苹果电脑command+R），即打开：“运行”窗口。
+　　2.在运行中输入：mstsc，然后点击“确定”。
+　　3.这是会打开一个远程桌面连接，需要输入用户名和密码，你直接复制粘贴服务商提供给你的账号即可。
+　　4.登录成功后的界面是这样的：
+　　【总结】
+　　VPS相当于一个虚拟端的电脑，我们可以在远程对其进行操控，其主要的优点有两个一个是低延迟，还有一个是可以24小时的运行。登录上VPS之后，可以想操作自己的电脑一样，打开网页下载MT4，然后加载EA。
+　　如果操作都完毕了，你可以点击远程桌面右上角的叉叉直接退出，这时MT4软件、专家信号系统、自助跟单系统都还是正常运行。想要停止EA，你也只有进入通过远程桌面进入VPS中，才可以操作。
+　　提醒：正常手机端和桌面都可以操作VPS。
+　　服务器租用/服务器托管最具实力IDC提供商！十年品牌保障 - 唯一网络！
+　　转载请注明：唯一网络http://www.wy.cn/
+
+
+
+
+
+网站关键字分析如何进行？
+
+一个网站建立之后，需要做的事当然是要被人找到，而如何要被人找到？那就要通过网站的关键字来找了，那么，设置网站的关键字就成为一个非常重要的工作。那如何进行关键字分析呢？
+　　首先，我们要根据我们业务类型来确定我们所要的目标关键字，目标关键字相当于一个便签，起到告诉搜索引擎我们是什么，做什么的作用，不可随意更改，所以设定需谨慎。
+　　当目标关键字分析确定好了之后那么接下来就是要研究长尾关键字了，在此唯一网络小编先用自己对长尾关键字的含义做个介绍，所谓长尾关键字就是通过搜索与网站主题相关的词或句子就是长尾关键字。做好长尾关键字的研究会给网站带来意想不到的惊喜，需然长尾关键字搜索量不大，但可以有的词是很精准的，带来的转化率也是最高的，是整个网站最为重要的词。
+　　关键字的竞争强度研究
+　　在对一个网站进行关键字研究时，对关键字的竞争强度研究也很重要，所谓关键字的竞争强度顾名思义就是对竞争对手的研究，当在做一个网站关键字分析时不仅仅只是对其指数的分析，而是还需要对关键字的竞争度分析，如果一个关键字的竞争度很大而自己的实力有限，那么优化这样的词是很理性的，一般情况在选择关键字时会选择有一定搜索指数的词而且竞争度不大的词，这样的词不仅仅做起来容易而且带来的流量也很可观。那么怎么样来分析关键字的竞争强度呢？下面唯一网络小编分以下几点来与大家分享。
+　　1.搜索某关键字看其做百度竞价的有多少，如果该词做竞价的超过了10个网站那么说明这个关键字的竞争强度是非常之大的。如果竞争网站有6-10个说明该词的竞争度为中篇上，如果在3-6说明该词的竞争度为中偏下，同理3-0说明该词竞争度很低。
+　　2.查看百度搜索的相关结果，如果所所搜索的关键字数量为500万以上则说明该的竞争度是高难度的。如果搜索相关数量为100-500万则说明为中偏上，同理50-100万说明该词的竞争为中偏下，50万以下的词说明竞争度较低。如唯一网络小编通过百度搜索咖啡机这个词所得到的相关结果数为57600，000说明该词的竞争度是非常大的。
+　　3.查看百度快照前5的网站域名看其是不是都为顶级域名，如果排名在前几个网站的域名都为顶级域名的话，那就说明该词的竞争强度是很大。还有就是看排名在前几个网站的域名年限，如果排名在前的几个网站的域名年限都在10年以上的话，那么这个竞争度也是很大，一般情况很难超过像这类网站。
+　　总之对于关键字分析研究唯一网络小编认为要结合研究关键字的竞争强度来综合分析才能给予一个网站提供具有价值的关键字，而不是看单方面的指数来决定，一个网站关键字的价值性并不只是取决于指数的高低。而是要选择适合自己网站并且与自身的优化实力相当的关键字。如果当你优化的一个关键字指数很高竞争强度又大，与自身的实力很不相当，很难优化上去，对于一个这个网站来说这个词的价值就不高，而且花了大量的精力和时间也没有把这个词做上去，唯一网络小编倒认为是一种亏损。
+　　以上就是如何进行关键词分析的内容，希望能帮到你。
+
+
+
+
+
+根据uri获取图片文件
+
+最近做用图库和拍照选择图片的功能，图库选择没问题，但是拍照选择的时候，根据uri获取图片路径的时候老是报空指针异常。经过一段时间的琢磨尝试，终于让我找到了办法，代码如下：
+ public  String getPaths(Context ac, String uriStr) {
+        Uri uri = Uri.parse(uriStr);
+        if(uri.getScheme().toString().compareTo("content") == 0){
+            ContentResolver cr = ac.getContentResolver();
+            Cursor cursor = cr.query(uri, null, null, null, null);// 根据Uri从数据库中找
+            if (cursor != null) {
+                cursor.moveToFirst();
+                String filePath = cursor.getString(cursor.getColumnIndex("_data"));// 获取图片路径
+                cursor.close();
+                if (filePath != null) {
+                    return filePath;
+                }
+            }
+        }else if(uri.getScheme().toString().compareTo("file") == 0){
+            return uri.toString().replace("file://","");
+        }
+        return null;
+    }
+
+
+
+
+
+
+整理了一份React-Native学习指南
+
+自己在学习React-Native过程中整理的一份学习指南，包含 教程、开源app和资源网站等，还在不断更新中。欢迎pull requests！
+React-Native学习指南
+本指南汇集React-Native各类学习资源，给大家提供便利。指南正在不断的更新，大家有好的资源欢迎Pull Requests！
+同时还有Awesome React-Native系列
+https://github.com/jondot/awesome-react-native 
+教程
+react-native 官方api文档 http://facebook.github.io/react-native/docs/getting-started.html 
+react-native 中文api文档 (翻译中) https://github.com/ecomfe/react-native-cn 
+react.js中文文档 http://reactjs.cn/ 
+react.js入门教程(gitbook) http://hulufei.gitbooks.io/react-tutorial/content/introduction.html 
+react.js快速入门教程 - 阮一峰 http://www.ruanyifeng.com/blog/2015/03/react.html 
+react.js视频教程 http://react.nodejs-china.org/t/reactjszhong-wen-shi-pin-jiao-cheng-bai-du-wang-pan/584 
+react-native第一课 http://html-js.com/article/2783 
+深入浅出 React Native：使用 JavaScript 构建原生应用 http://zhuanlan.zhihu.com/FrontendMagazine/19996445 
+React Native通信机制详解 http://blog.cnbang.net/tech/2698/ 
+React Native布局篇 http://segmentfault.com/a/1190000002658374 
+React Native 基础练习指北（一） http://segmentfault.com/a/1190000002645929 
+React Native 基础练习指北（二） http://segmentfault.com/a/1190000002647733 
+构建一个简单的列表页和2页导航 http://www.xn--cnq920ntha.cn/archives/235#6838470-tsina-1-17436-6a377b1a66595f9ede646cf5c012734c 
+Diary of Building an iOS App with React Native http://herman.asia/building-a-flashcard-app-with-react-native 
+Use React Native in Existing iOS App http://blog-en.leapoahead.com/post/use-react-native-in-existing-ios-app 
+tcomb-form-native使用视频教程(需翻墙) http://react.rocks/example/tcomb-form-native 
+开源APP
+
+研究源码也是一个很好的学习方式
+官方演示App https://github.com/facebook/react-native/tree/master/Examples 
+ReactNativeRubyChina https://github.com/henter/ReactNativeRubyChina 
+HackerNews-React-Native https://github.com/iSimar/HackerNews-React-Native 
+React-Native新闻客户端 https://github.com/tabalt/ReactNativeNews 
+newswatch(新闻客户端) https://github.com/bradoyler/newswatch-react-native 
+buyscreen(购买页面) https://github.com/appintheair/react-native-buyscreen 
+V2EX客户端 https://github.com/samuel1112/v2er 
+react-native-todo https://github.com/joemaddalone/react-native-todo 
+react-native-beer https://github.com/muratsu/react-native-beer 
+react-native-stars https://github.com/86/react-native-stars 
+模仿天猫首页的app https://github.com/baofen14787/react-native-demo 
+ReactNativeChess https://github.com/csarsam/ReactNativeChess 
+react native 编写的音乐软件 https://github.com/Johnqing/miumiu 
+react-native-pokedex https://github.com/ababol/react-native-pokedex 
+CNode-React-Native https://github.com/SFantasy/CNode-React-Native 
+8tracks电台客户端 https://github.com/voronianski/EightTracksReactNative 
+React-Native实现的计算器 https://github.com/yoxisem544/Calculator-using-React-Native 
+房产搜索app https://github.com/jawee/react-native-PropertyFinder 
+知乎专栏app https://github.com/LeezQ/react-native-zhihu-app 
+ForeignExchangeApp https://github.com/peralmq/ForeignExchangeApp 
+工具
+react-native-snippets(代码提示) https://github.com/Shrugs/react-native-snippets 
+react-native-babel(使用ES6+) https://github.com/roman01la/react-native-babel 
+资源网站
+React-native官网 http://facebook.github.io/react-native/ 
+React-China社区 http://react-china.org/ 
+React-native组件库（比较全的组件库） http://react.parts/ 
+React Native Modules http://reactnativemodules.com/ 
+11款React Native开源移动 UI 组件 http://www.oschina.net/news/61214/11-react-native-ui-components 
+业界讨论
+谈谈 React Native - 唐巧 http://blog.devtang.com/blog/2015/02/01/talk-about-react-native/ 
+如何评价React-Native? http://www.zhihu.com/question/27852694/answer/43990708 
+React Native概述：背景、规划和风险 http://div.io/topic/938 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+网页框架的网页属性优化
+
+我们都知道使用框架的网页无法被使用网络蜘蛛（spiders）或网络爬虫（crawlers） 的搜索引擎（如Google）正确索引。那是否就以为着使用了框架型网页就完全无法对其网页进行优化。其实是可以优化的，下面跟随唯一网络小编一起来看看。
+　　实际上在HTML标记中，有一个叫做NOFRAME的标记，如果使用得当的话我们就可以有效地对页面进行优化了，从而使得搜索引擎能够正确索引你框架网页上的内容信息。也有网站这样使用NOFRAMES标记：他们在NOFRAMES标记里放上这么一段话：“本网页使用了框架，但您的浏览器不支持框架。请下载新的浏览器观看。”
+　　让我们看看那些专业的搜索引擎优化公司是怎么做的吧。他们在使用了框架的网页中，有效的提供含有丰富关键字和关键短语的重要文字和内容，从而有效帮助网站在SERP（搜索引擎搜索结果页）中取得较高的排名（页面等级）。
+　　这样优化的结果，其实就是让主要搜索引擎不但读取了你的网页后台代码中的标题和其它原标记，而且对那些不支持框架的浏览器所无法显示的页面内容信息，也进行了索引。如果你出于某种原因非要使用框架结构，那么请紧记：在你的后台代码中一定要正确的使用NOFRAMES标记，这一点非常重要。
+　　很显然，我们所说的这些优化措施，只有对那些网页内容经过精心撰写，并且在内容中充分使用了重要关键字和关键短语的网站才起作用。
+　　综上所述，不管是使用框架技术的网站还是非框架技术的网站，只要你采用的是恰当的技术和正确的技巧，都可以进行完美的优化从而取得理想的页面等级。
+　　改变框架网页属性
+　　在设置好框架的整体布局后，我们还可以对每一框架的具体属性进行设置，操作如下：
+　　一、单击需设置属性的框架，选择“框架”菜单中的“框架属性”，则弹出“框架属性”对活框。
+　　二、在对话框的“名称”文本框中可输入框架名，这样便于识别不同的框架；在“选项”区域中，若选中“在浏览器中可以调大小”复选框，则客户在浏览站点时，可重新定义框架尺寸，通过在“显示滚动条”下拉列表框中选择不同的描述项，可设置让滚动条是否出现。
+　　三、在“框架大小”区域中，可设置框架大小，可以定义一个绝对像素值或相对于浏览器窗口的百分比，若要用浏览器来设置相对于该页面中框架的尺寸，可选“相对”；在“边距”区域中，可设置内容页面与框架边框分隔的像素数值。
+　　四、要改变开始页面，可以在“初始网页”文本框中输入一个新的页面名字或URL。
+　　五、单击“框架网页”按钮，则弹出“网页属性”对话框。
+　　六、在该对话框的“框架”选项卡中，在“框架间距”文本框中，可输入以像素为单位的边框宽度；若要使框架边框消失，则不要选中“显示边框”复选框。
+　　七、单击“确定”按钮，关闭“网页属性”对话框，再单击“确定”按钮，关闭“框架属件”对话框，完成框架属性设置。
+　　以上就是网页框架的网页熟悉优化内容，希望能帮到你。
+

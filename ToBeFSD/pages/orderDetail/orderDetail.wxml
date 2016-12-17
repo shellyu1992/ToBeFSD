@@ -1,0 +1,90 @@
+<view class="orderDetail-wrap page" id="orderDetail">
+  <view class="orderDetail-section" style="color:#fff;background-color:#535961;">
+    <view style="margin-bottom:4px;">订单状态：{{ orderStatus[orderInfo.status] }}</view>
+    <view>订单号：{{ orderInfo.order_id }}</view>
+  </view>
+  <view class="orderDetail-section orderDetail-address-detail right-arrow-bar" bindtap="showAddressDialog" data-id="{{ orderInfo.address_info ? orderInfo.address_info.address_id : '' }}">
+    <view class="ico-moon icon-rightarrow"></view>
+    <block wx:if="{{ orderInfo.address_info }}">
+      <view>收件人：{{ orderInfo.address_info.name }}</view><view>联系电话：{{ orderInfo.address_info.contact }}</view><view style="color:#aaa;">{{ orderInfo.address_info.province.text + orderInfo.address_info.city.text + orderInfo.address_info.district.text + orderInfo.address_info.detailAddress }}</view>
+    </block>
+    <block wx:else>
+      <view>请选择地址</view>
+    </block>
+  </view>
+  <view class="orderDetail-section">
+    <view class="orderDetail-order-list">
+      <block wx:for="{{ orderInfo.goods_info }}" wx:for-item="goods" wx:for-index="goodsIndex">
+        <view class="dialog-block-item">
+          <image class="list-goods-cover" src="{{ goods.cover }}"></image>
+          <view class="list-goods-content">{{ goods.goods_name }}</view>
+          <view class="list-goods-right">
+            <view>￥ {{ goods.price }}</view>
+            <view>× {{ goods.num }}</view>
+          </view>
+        </view>
+        <view class="dialog-block-item" wx:if="{{ goodsAdditionalInfo[goods.goods_id] }}">
+          <view class="customField-container" wx:for="{{ goodsAdditionalInfo[goods.goods_id] }}" wx:for-item="field" wx:for-index="fieldIndex">
+            <block wx:if="{{ orderInfo.additional_info && orderInfo.additional_info[goods.goods_id] }}">
+              <block wx:if="{{ field.type === 'text' || field.type === 'mul-text' }}">
+                <view>{{ field.name }}:{{ orderInfo.additional_info[goods.goods_id][fieldIndex].value }}</view>
+              </block>
+              <block wx:elif="{{ field.type === 'picture' }}">
+                <view class="custom-field-image" wx:for="{{ orderInfo.additional_info[goods.goods_id][fieldIndex].value }}" wx:for-item="imgUrl">
+                  <image src="{{ imgUrl }}" mode="aspectFit" catchtap="previewImage" data-src="{{ imgUrl }}"></image>
+                </view>
+              </block>
+            </block>
+            <block wx:else >
+              <block wx:if="{{ field.type === 'text' }}">
+                <input data-name="{{ field.name }}" data-goods-index="{{ goodsIndex }}" data-field-index="{{ fieldIndex }}" placeholder="{{ field.name }}" bindinput="customFieldInput"  />
+              </block>
+              <block wx:elif="{{ field.type === 'mul-text' }}">
+                <textarea data-name="{{ field.name }}" data-goods-index="{{ goodsIndex }}" data-field-index="{{ fieldIndex }}" placeholder="{{ field.name }}" bindblur="customFieldInput"></textarea>
+              </block>
+              <block wx:elif="{{ field.type === 'picture' }}">
+                <view class="custom-field-image" wx:for="{{ customFields[goodsIndex][fieldIndex].value }}" wx:for-item="fieldImg" wx:for-index="imageIndex">
+                  <image src="{{ fieldImg }}" mode="aspectFit" catchtap="previewImage" data-src="{{ fieldImg }}"></image>
+                  <label class="delete-img" catchtap="deleteCustomFieldImage" data-goods-index="{{ goodsIndex }}" data-field-index="{{ fieldIndex }}" data-image-index="{{ imageIndex }}">×</label>
+                </view>
+                <view class="upload-field-image" catchtap="uploadCustomFieldImage" data-name="{{ field.name }}" data-goods-index="{{ goodsIndex }}" data-field-index="{{ fieldIndex }}">{{ field.name }}</view>
+              </block>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="dialog-block-item">
+      <view>商品总额：<text class="pull-right">￥{{ orderInfo.total_price }}</text></view>
+      <view>物流费用：<text class="pull-right">￥{{ orderInfo.express_fee || 0 }}</text></view>
+    </view>
+    <view class="dialog-block-item txt-r">
+      <view>下单时间：{{ orderInfo.add_time }}</view>
+      <view style="margin-top:5px;">订单总价：<text class="orderDetail-pay-count">￥{{ orderInfo.totalPay }}</text></view>
+    </view>
+    <view class="txt-r orderDetail-btn-status">
+      <block wx:if="{{ orderInfo.status == 0 }}">
+        <text class="btn orderDetail-cancel-order" bindtap="cancelOrder">取消订单</text><text class="btn btn-red orderDetail-pay-directly" bindtap="payOrder">立即支付</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 1 }}">
+        <text>待发货</text> <text class="btn btn-red orderDetail-apply-drawback" bindtap="applyDrawback">申请退款</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 2 }}">
+        <text class="btn orderDetail-check-logistics" bindtap="checkLogistics">查看物流</text> <text class="btn btn-red orderDetail-apply-drawback" bindtap="applyDrawback">申请退款</text> <text class="btn btn-red orderDetail-sure-receipt" bindtap="sureReceipt">确认收货</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 3 }}">
+        <text class="btn orderDetail-check-logistics" bindtap="checkLogistics">查看物流</text> <text class="btn btn-red orderDetail-make-comment" bindtap="makeComment">去评价</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 4 }}">
+        <text>退款审核中</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 5 }}">
+        <text>退款中</text><text class="btn btn-red orderDetail-receive-drawback" bindtap="receiveDrawback">收到退款</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 6 }}">
+        <text>已完成</text> <text class="btn orderDetail-check-logistics" bindtap="checkLogistics">查看物流</text>
+      </block>
+      <block wx:if="{{ orderInfo.status == 7 }}"><text>已关闭</text></block>
+    </view>
+  </view>
+</view>

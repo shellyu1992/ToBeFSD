@@ -1,0 +1,32 @@
+<view class="app">
+<template name="zcCarousel">
+  <swiper indicator-dots="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}">
+    <block wx:for="{{data.content}}">
+      <swiper-item data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
+        <image class="swiper-item" src="{{item.pic}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+<view class="ele-container">
+  <template is="zcCarousel" data="{{data:carousel1}}"></template>
+</view><template name="zcList">
+  <view class="element list" style="{{data.style}}">
+      <view class="list-container {{data.customFeature.sec_mode}}">
+        <block wx:for="{{data.content}}">
+          <view class="list-item background-ele" style="{{item.listStyle}}" data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
+            <image class="list-img" src="{{item.pic}}" style="{{item.imgStyle}}"></image>
+            <view class="title-container" style="{{item.titleWidth}}">
+              <view class="title">{{item.title}}</view>
+              <view class="sec-title" style="{{item.secTitleStyle}}">{{item.secTitle}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcList" data="{{data:list2}}"></template>
+</view>
+
+</view>

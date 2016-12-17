@@ -1,0 +1,178 @@
+<view class="app">
+<import src="../../components/wxParse/wxParse.wxml"/>
+<template name="zcText">
+  <block wx:if="{{real_value}}">
+	  <block wx:if="{{real_value.join !== undefined}}">
+      <view class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+	      <view class="wxParse">
+	        <template is="wxParse" data="{{wxParseData: real_value}}"/>
+	      </view>
+	    </view>
+	   </block>
+	  <block wx:else>
+	    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{real_value}}</text>
+	  </block>
+  </block>
+  <block wx:else>
+    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{data.content}}</text>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text1}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcText" data="{{data:text1}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcText" data="{{data:text1}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text1}}"></template>
+  </block>
+</view>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text2}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcText" data="{{data:text2}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcText" data="{{data:text2}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text2}}"></template>
+  </block>
+</view>
+<template name="zcLayoutVessel3">
+  <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
+        catchtap="{{data.eventHandler}}">
+    <view class="cell" style="{{data.cell_style_1}}">
+  <view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+</view>
+
+</view>
+<view class="cell border-cell" style="{{data.cell_style_2}}">
+  <template name="zcPicture">
+  <block wx:if="{{real_value}}">
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{real_value}}"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{data.content}}"></image>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+</view>
+</view>
+
+  </view>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcLayoutVessel3" data="{{data:layout_vessel3, real_value:real_value}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcLayoutVessel3" data="{{data:layout_vessel3, real_value:item}}"></template>
+  </block>
+</view>
+<template name="zcLayoutVessel4">
+  <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
+        catchtap="{{data.eventHandler}}">
+    <view class="cell" style="{{data.cell_style_1}}">
+  <view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
+  </block>
+</view>
+
+</view>
+<view class="cell border-cell" style="{{data.cell_style_2}}">
+  <template name="zcPicture">
+  <block wx:if="{{real_value}}">
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{real_value}}"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{data.content}}"></image>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcPicture" data="{{data:data.content.rightEles[0]}}"></template>
+  </block>
+</view>
+</view>
+
+  </view>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcLayoutVessel4" data="{{data:layout_vessel4, real_value:real_value}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcLayoutVessel4" data="{{data:layout_vessel4, real_value:item}}"></template>
+  </block>
+</view>
+<template name="zcCarousel">
+  <swiper indicator-dots="true" autoplay="{{data.customFeature.autoplay}}" vertical="{{data.customFeature.vertical}}" interval="{{data.customFeature.interval*1000}}" duration="750" style="{{data.style}}">
+    <block wx:for="{{data.content}}">
+      <swiper-item data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
+        <image class="swiper-item" src="{{item.pic}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>
+<view class="ele-container">
+  <template is="zcCarousel" data="{{data:carousel5}}"></template>
+</view>
+</view>

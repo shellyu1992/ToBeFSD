@@ -1,0 +1,171 @@
+<view class="myOrder-wrap page" id="myOrder">
+  <view class="flex-box myOrder-tab-list">
+    <view class="flex-sub-box-5 {{ currentTabIndex == 0 ? 'active' : '' }}" bindtap="clickOrderTab" data-index="0" data-href="myOrder-all">全部</view>
+    <view class="flex-sub-box-5 {{ currentTabIndex == 1 ? 'active' : '' }}" bindtap="clickOrderTab" data-index="1" data-href="myOrder-toPay">待付款</view>
+    <view class="flex-sub-box-5 {{ currentTabIndex == 2 ? 'active' : '' }}" bindtap="clickOrderTab" data-index="2" data-href="myOrder-sending">待发货</view>
+    <view class="flex-sub-box-5 {{ currentTabIndex == 3 ? 'active' : '' }}" bindtap="clickOrderTab" data-index="3" data-href="myOrder-receiving">待收货</view>
+    <view class="flex-sub-box-5 {{ currentTabIndex == 4 ? 'active' : '' }}" bindtap="clickOrderTab" data-index="4" data-href="myOrder-comment">待评价</view>
+  </view>
+  <view style="height:calc(100% - 95rpx); margin-top:95rpx;">
+    <view class="scrollContainer" hidden="{{ currentTabIndex != 0 }}">
+      <scroll-view class="myOrder-all myOrder-content-container" lower-threshold="10" scroll-y="true" bindscrolltolower="scrollToListBottom">
+        <view class="myOrder-list-wrap" wx:for="{{ orderLists[0] }}">
+          <view class="dialog-block-item">
+            <text>{{ item.add_time }}</text>
+            <text wx:if="{{ item.status == 0 }}" class="pull-right">待付款</text>
+            <text wx:elif="{{ item.status == 1 }}" class="pull-right">待发货</text>
+            <text wx:elif="{{ item.status == 2 }}" class="pull-right">待收货</text>
+            <text wx:elif="{{ item.status == 3 }}" class="pull-right">待评价</text>
+            <text wx:elif="{{ item.status == 4 }}" class="pull-right">退款审核中</text>
+            <text wx:elif="{{ item.status == 5 }}" class="pull-right">正在退款中</text>
+            <text wx:elif="{{ item.status == 6 }}" class="pull-right">已完成</text>
+            <text wx:elif="{{ item.status == 7 }}" class="pull-right">已关闭</text>
+          </view>
+          <view class="myOrder-goods-list" bindtap="goToOrderDetail" data-id="{{ item.order_id }}">
+            <view wx:for="{{ item.goods_info }}" wx:for-item="goods">
+              <view class="dialog-block-item">
+                <image class="myOrder-goods-cover" src="{{ goods.cover }}"></image>
+                <view class="myOrder-goods-title">{{ goods.goods_name }}</view>
+                <view class="myOrder-goods-right">
+                  <view>￥<text class="myOrder-goods-price">{{ goods.price }}</text></view>
+                  <view>×<text class="myOrder-goods-count">{{ goods.num }}</text></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="myOrder-list-bottom">
+            <view><text class="myOrder-list-count">共 {{ item.goods_num }} 件</text><text>实付：<text class="myOrder-pay-price">￥{{ item.totalPay }}</text></text></view>
+            <label wx:if="{{ item.status == 0 }}">
+              <text class="btn myOrder-cancel-order" bindtap="cancelOrder" data-id="{{ item.order_id }}">取消订单</text>
+              <text class="btn btn-red myOrder-pay-directly" bindtap="payOrder" data-id="{{ item.order_id }}">支付</text>
+            </label>
+            <label wx:elif="{{ item.status == 1 }}">
+              <text class="btn btn-red myOrder-apply-drawback" bindtap="applyDrawback" data-id="{{ item.order_id }}">申请退款</text>
+            </label>
+            <label wx:elif="{{ item.status == 2 }}">
+              <text class="btn myOrder-check-logistics" bindtap="checkLogistics" data-id="{{ item.order_id }}">查看物流</text>
+              <text class="btn btn-red myOrder-apply-drawback" bindtap="applyDrawback" data-id="{{ item.order_id }}">申请退款</text>
+              <text class="btn btn-red myOrder-sure-receipt" bindtap="sureReceipt" data-id="{{ item.order_id }}">确认收货</text>
+            </label>
+            <label wx:elif="{{ item.status == 3 }}">
+              <text class="btn myOrder-check-logistics" bindtap="checkLogistics" data-id="{{ item.order_id }}">查看物流</text>
+              <text class="btn btn-red myOrder-make-comment" bindtap="makeComment" data-id="{{ item.order_id }}">去评价</text>
+            </label>
+            <label wx:elif="{{ item.status == 6 }}">
+              <text class="btn myOrder-check-logistics" bindtap="checkLogistics" data-id="{{ item.order_id }}">查看物流</text>
+            </label>
+          </view>
+        </view>
+        <view hidden="{{ !noMore[0] }}" class="noMoreNewDataTip">已经没有新数据了</view>
+      </scroll-view>
+    </view>
+    <view class="scrollContainer" hidden="{{ currentTabIndex != 1 }}">
+      <scroll-view class="myOrder-toPay myOrder-content-container" lower-threshold="10" scroll-y="true" bindscrolltolower="scrollToListBottom">
+        <view class="myOrder-list-wrap" wx:for="{{ orderLists[1] }}">
+          <view class="dialog-block-item">
+            <text>{{ item.add_time }}</text>
+            <text class="pull-right">待付款</text>
+          </view>
+          <view class="myOrder-goods-list" bindtap="goToOrderDetail" data-id="{{ item.order_id }}">
+            <view wx:for="{{ item.goods_info }}" wx:for-item="goods">
+              <view class="dialog-block-item">
+                <image class="myOrder-goods-cover" src="{{ goods.cover }}"></image>
+                <view class="myOrder-goods-title">{{ goods.goods_name }}</view>
+                <view class="myOrder-goods-right">
+                  <view>￥<text class="myOrder-goods-price">{{ goods.price }}</text></view>
+                  <view>×<text class="myOrder-goods-count">{{ goods.num }}</text></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="myOrder-list-bottom">
+            <view><text class="myOrder-list-count">共 {{ item.goods_num }} 件</text><text>实付：<text class="myOrder-pay-price">￥{{ item.totalPay }}</text></text></view>
+            <label><text class="btn myOrder-cancel-order" bindtap="cancelOrder" data-id="{{ item.order_id }}">取消订单</text> <text class="btn btn-red myOrder-pay-directly" bindtap="payOrder" data-id="{{ item.order_id }}">支付</text></label>
+          </view>
+        </view>
+        <view hidden="{{ !noMore[1] }}" class="noMoreNewDataTip">已经没有新数据了</view>
+      </scroll-view>
+    </view>
+    <view class="scrollContainer" hidden="{{ currentTabIndex != 2 }}">
+      <scroll-view class="myOrder-sending myOrder-content-container" lower-threshold="10" scroll-y="true" bindscrolltolower="scrollToListBottom">
+        <view class="myOrder-list-wrap" wx:for="{{ orderLists[2] }}">
+          <view class="dialog-block-item">
+            <text>{{ item.add_time }}</text>
+            <text class="pull-right">待发货</text>
+          </view>
+          <view class="myOrder-goods-list" bindtap="goToOrderDetail" data-id="{{ item.order_id }}">
+            <view wx:for="{{ item.goods_info }}" wx:for-item="goods">
+              <view class="dialog-block-item">
+                <image class="myOrder-goods-cover" src="{{ goods.cover }}"></image>
+                <view class="myOrder-goods-title">{{ goods.goods_name }}</view>
+                <view class="myOrder-goods-right">
+                  <view>￥<text class="myOrder-goods-price">{{ goods.price }}</text></view>
+                  <view>×<text class="myOrder-goods-count">{{ goods.num }}</text></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="myOrder-list-bottom">
+            <view><text class="myOrder-list-count">共 {{ item.goods_num}} 件</text><text>实付：<text class="myOrder-pay-price">￥{{ item.totalPay }}</text></text></view>
+            <label><text class="btn btn-red myOrder-apply-drawback" bindtap="applyDrawback" data-id="{{ item.order_id }}">申请退款</text></label>
+          </view>
+        </view>
+        <view hidden="{{ !noMore[2] }}" class="noMoreNewDataTip">已经没有新数据了</view>
+      </scroll-view>
+    </view>
+    <view class="scrollContainer" hidden="{{ currentTabIndex != 3 }}">
+      <scroll-view class="myOrder-receiving myOrder-content-container" lower-threshold="10" scroll-y="true" bindscrolltolower="scrollToListBottom">
+        <view class="myOrder-list-wrap" wx:for="{{ orderLists[3] }}">
+          <view class="dialog-block-item">
+            <text>{{ item.add_time }}</text>
+            <text class="pull-right">待收货</text>
+          </view>
+          <view class="myOrder-goods-list" bindtap="goToOrderDetail" data-id="{{ item.order_id }}">
+            <view wx:for="{{ item.goods_info }}" wx:for-item="goods">
+              <view class="dialog-block-item">
+                <image class="myOrder-goods-cover" src="{{ goods.cover }}"></image>
+                <view class="myOrder-goods-title">{{ goods.goods_name }}</view>
+                <view class="myOrder-goods-right">
+                  <view>￥<text class="myOrder-goods-price">{{ goods.price }}</text></view>
+                  <view>×<text class="myOrder-goods-count">{{ goods.num }}</text></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="myOrder-list-bottom">
+            <view><text class="myOrder-list-count">共 {{ item.goods_num}} 件</text><text>实付：<text class="myOrder-pay-price">￥{{ item.totalPay }}</text></text></view>
+            <label><text class="btn myOrder-check-logistics" bindtap="checkLogistics" data-id="{{ item.order_id }}">查看物流</text> <text class="btn btn-red myOrder-apply-drawback" bindtap="applyDrawback" data-id="{{ item.order_id }}">申请退款</text> <text class="btn btn-red myOrder-sure-receipt" bindtap="sureReceipt" data-id="{{ item.order_id }}">确认收货</text></label>
+          </view>
+        </view>
+        <view hidden="{{ !noMore[3] }}" class="noMoreNewDataTip">已经没有新数据了</view>
+      </scroll-view>
+    </view>
+    <view class="scrollContainer" hidden="{{ currentTabIndex != 4 }}">
+      <scroll-view class="myOrder-comment myOrder-content-container" lower-threshold="10" scroll-y="true" bindscrolltolower="scrollToListBottom">
+        <view class="myOrder-list-wrap" wx:for="{{ orderLists[4] }}">
+          <view class="dialog-block-item">
+            <text>{{ item.add_time }}</text>
+            <text class="pull-right">待评价</text>
+          </view>
+          <view class="myOrder-goods-list" bindtap="goToOrderDetail" data-id="{{ item.order_id }}">
+            <view wx:for="{{ item.goods_info }}" wx:for-item="goods">
+              <view class="dialog-block-item">
+                <image class="myOrder-goods-cover" src="{{ goods.cover }}"></image>
+                <view class="myOrder-goods-title">{{ goods.goods_name }}</view>
+                <view class="myOrder-goods-right">
+                  <view>￥<text class="myOrder-goods-price">{{ goods.price }}</text></view>
+                  <view>×<text class="myOrder-goods-count">{{ goods.num }}</text></view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="myOrder-list-bottom">
+            <view><text class="myOrder-list-count">共 {{ item.goods_num}} 件</text><text>实付：<text class="myOrder-pay-price">￥{{ item.totalPay }}</text></text></view>
+            <label><text class="btn myOrder-check-logistics" bindtap="checkLogistics" data-id="{{ item.order_id }}">查看物流</text> <text class="btn btn-red myOrder-make-comment" bindtap="makeComment" data-id="{{ item.order_id }}">去评价</text></label>
+          </view>
+        </view>
+        <view hidden="{{ !noMore[4] }}" class="noMoreNewDataTip">已经没有新数据了</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

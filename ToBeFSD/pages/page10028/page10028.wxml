@@ -1,0 +1,88 @@
+<view class="app">
+<template name="zcPicture">
+  <block wx:if="{{real_value}}">
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{real_value}}"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{data.content}}"></image>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcPicture" data="{{data:picture1, real_value:real_value.form_data.FET_picture}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.FET_picture && !vessel_page_data.form_data.FET_picture}}">
+    <template is="zcPicture" data="{{data:picture1, real_value:detail_data.FET_picture}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.FET_picture}}">
+      <template is="zcPicture" data="{{data:picture1, real_value:vessel_page_data.form_data.FET_picture}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcPicture" data="{{data:picture1, real_value:item.form_data.FET_picture}}"></template>
+  </block>
+</view><import src="../../components/wxParse/wxParse.wxml"/>
+<template name="zcText">
+  <block wx:if="{{real_value}}">
+	  <block wx:if="{{real_value.join !== undefined}}">
+      <view class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+	      <view class="wxParse">
+	        <template is="wxParse" data="{{wxParseData: real_value}}"/>
+	      </view>
+	    </view>
+	   </block>
+	  <block wx:else>
+	    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{real_value}}</text>
+	  </block>
+  </block>
+  <block wx:else>
+    <text class="element text" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">{{data.content}}</text>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text2, real_value:real_value.form_data.FET_title}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.FET_title && !vessel_page_data.form_data.FET_title}}">
+    <template is="zcText" data="{{data:text2, real_value:detail_data.FET_title}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.FET_title}}">
+      <template is="zcText" data="{{data:text2, real_value:vessel_page_data.form_data.FET_title}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text2, real_value:item.form_data.FET_title}}"></template>
+  </block>
+</view>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text3, real_value:real_value.form_data.FET_Author}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.FET_Author && !vessel_page_data.form_data.FET_Author}}">
+    <template is="zcText" data="{{data:text3, real_value:detail_data.FET_Author}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.FET_Author}}">
+      <template is="zcText" data="{{data:text3, real_value:vessel_page_data.form_data.FET_Author}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text3, real_value:item.form_data.FET_Author}}"></template>
+  </block>
+</view>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcText" data="{{data:text4, real_value:real_value.form_data.FET_content}}"></template>
+  </block>
+  <block wx:elif="{{detail_data.FET_content && !vessel_page_data.form_data.FET_content}}">
+    <template is="zcText" data="{{data:text4, real_value:detail_data.FET_content}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data.FET_content}}">
+      <template is="zcText" data="{{data:text4, real_value:vessel_page_data.form_data.FET_content}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcText" data="{{data:text4, real_value:item.form_data.FET_content}}"></template>
+  </block>
+</view>
+
+</view>

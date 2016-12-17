@@ -1,0 +1,55 @@
+<view class="app">
+<template name="zcUserCenter">
+  <view class="user-center {{data.customFeature.mode == 1 ? 'usercenter-mode1' : ''}} background-ele {{ data.customFeature['with-horizontal'] ? 'with-horizontal-view': '' }}" style="{{data.style}}">
+    <view class="show-view" catchtap="UserCenterTurnToPage" data-router="userCenter">
+      <label class="empty-span"></label>
+      <image class="cover-thumb" src="{{ userInfo.cover_thumb || 'http://img.zhichiwangluo.com/zc_app_default_photo.png'}}"></image>
+      <label class="nickname">{{ userInfo.nickname || '用户名' }}</label>
+      <label class="ico-moon icon-rightarrow"></label>
+    </view>
+    <block wx:if="{{ data.customFeature['with-horizontal'] }}">
+      <view class="horizontal-view">
+        <view class="{{data.customFeature.mode == 1? 'horizontal-router-container1': 'horizontal-router-container'}}">
+          <view catchtap="UserCenterTurnToPage" data-router="myAddress">
+            <label class="ico-moon icon-location"></label>
+            <text>收货地址</text>
+            <label class="ico-moon icon-rightarrow"></label>
+          </view>
+          <view catchtap="UserCenterTurnToPage" data-router="myOrder">
+            <label class="ico-moon icon-notebook"></label>
+            <text>我的订单</text>
+            <label class="ico-moon icon-rightarrow"></label>
+          </view>
+          <view catchtap="UserCenterTurnToPage"  data-router="shoppingCart">
+            <label class="ico-moon icon-shoppingcart"></label>
+            <text>购物车</text>
+            <label class="ico-moon icon-rightarrow"></label>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcUserCenter" data="{{data:user_center1, userInfo: userInfo}}"></template>
+</view>
+<template name="zcList">
+  <view class="element list" style="{{data.style}}">
+      <view class="list-container {{data.customFeature.sec_mode}}">
+        <block wx:for="{{data.content}}">
+          <view class="list-item background-ele" style="{{item.listStyle}}" data-event-params="{{item.eventParams}}" catchtap="{{item.eventHandler}}">
+            <image class="list-img" src="{{item.pic}}" style="{{item.imgStyle}}"></image>
+            <view class="title-container" style="{{item.titleWidth}}">
+              <view class="title">{{item.title}}</view>
+              <view class="sec-title" style="{{item.secTitleStyle}}">{{item.secTitle}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcList" data="{{data:list2}}"></template>
+</view>
+
+</view>
