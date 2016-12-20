@@ -1,0 +1,180 @@
+<view class="app">
+<template name="zcFreeVessel1">
+  <view class="element free-vessel" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+    <template name="zcPicture">
+  <block wx:if="{{real_value}}">
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{real_value}}"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{data.content}}"></image>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcPicture" data="{{data:data.content[0]}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcPicture" data="{{data:data.content[0]}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcPicture" data="{{data:data.content[0]}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcPicture" data="{{data:data.content[0]}}"></template>
+  </block>
+</view><template name="zcCountEle">
+  <block wx:if="{{!!form}}">
+    <view class="element count-ele" style="{{data.style}}" data-form="{{form}}" data-objrel="{{form}}_{{data_id}}{{!!data.ifAutoCount? '_view': ''}}" data-index="{{index}}" catchtap="changeCount" data-compid="data.content[1]" data-counted="{{has_count}}" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{count_num}}</label>
+    </view>
+  </block>
+
+  <block wx:elif="{{!!data.ifAutoCount}}">
+    <view class="element count-ele" style='{{data.style}}' animation="{{data.animations}}" data-objrel="{{data.objrel}}" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{data.count_data.has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{data.count_data.count_num}}</label>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element count-ele" style='{{data.style}}' animation="{{data.animations}}" data-compid="{{data.compId}}" data-counted="{{data.count_data.has_count}}" data-objrel="{{data.objrel}}" catchtap="changeCount" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{data.count_data.has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{data.count_data.count_num}}</label>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <template is="zcCountEle" data="{{data:data.content[1],index:index,data_id:item.id,count_num:item.count_num,form:item.form,has_count:item.has_count,compId:item.compId}}"></template>
+</view>
+<template name="zcCountEle">
+  <block wx:if="{{!!form}}">
+    <view class="element count-ele" style="{{data.style}}" data-form="{{form}}" data-objrel="{{form}}_{{data_id}}{{!!data.ifAutoCount? '_view': ''}}" data-index="{{index}}" catchtap="changeCount" data-compid="data.content[2]" data-counted="{{has_count}}" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{count_num}}</label>
+    </view>
+  </block>
+
+  <block wx:elif="{{!!data.ifAutoCount}}">
+    <view class="element count-ele" style='{{data.style}}' animation="{{data.animations}}" data-objrel="{{data.objrel}}" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{data.count_data.has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{data.count_data.count_num}}</label>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element count-ele" style='{{data.style}}' animation="{{data.animations}}" data-compid="{{data.compId}}" data-counted="{{data.count_data.has_count}}" data-objrel="{{data.objrel}}" catchtap="changeCount" data-parentcompid="{{data.parentCompid}}">
+      <label class="count-icon {{data.icon}}{{data.count_data.has_count == 1? '-active': ''}}" style="width: {{data.icon_size}}; height: {{data.icon_size}}"></label>
+      <label class="count-tip">{{data.content}}</label>
+      <label class="js-count-value">{{data.count_data.count_num}}</label>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <template is="zcCountEle" data="{{data:data.content[2],index:index,data_id:item.id,count_num:item.count_num,form:item.form,has_count:item.has_count,compId:item.compId}}"></template>
+</view>
+
+  </view>
+</template>
+<view class="ele-container">
+<block wx:if="{{real_value}}">
+  <template is="zcFreeVessel1" data="{{data:free_vessel1, real_value:real_value}}"></template>
+</block>
+<block wx:else>
+  <template is="zcFreeVessel1" data="{{data:free_vessel1, real_value:item}}"></template>
+</block>
+</view>
+<template name="zcFormVessel2">
+  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
+        bindsubmit="submitForm"
+        data-compid="form_vessel2"
+        data-fieldinfo="{{data.field_info}}"
+  >
+    <template name="zcInputEle">
+  <view class="element input-ele js-form-ele " style="{{data.style}}">
+    <input type="text" placeholder="{{!!data.customFeature.placeholder? data.customFeature.placeholder: ''}}"
+           data-datakey="{{data.parentCompid}}.form_data.{{data.customFeature.segment}}"
+           bindchange="inputChange"
+    />
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcInputEle" data="{{data:data.content[0]}}"></template>
+</view>
+<template name="zcInputEle">
+  <view class="element input-ele js-form-ele " style="{{data.style}}">
+    <input type="text" placeholder="{{!!data.customFeature.placeholder? data.customFeature.placeholder: ''}}"
+           data-datakey="{{data.parentCompid}}.form_data.{{data.customFeature.segment}}"
+           bindchange="inputChange"
+    />
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcInputEle" data="{{data:data.content[1]}}"></template>
+</view>
+<template name="zcInputEle">
+  <view class="element input-ele js-form-ele " style="{{data.style}}">
+    <input type="text" placeholder="{{!!data.customFeature.placeholder? data.customFeature.placeholder: ''}}"
+           data-datakey="{{data.parentCompid}}.form_data.{{data.customFeature.segment}}"
+           bindchange="inputChange"
+    />
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcInputEle" data="{{data:data.content[2]}}"></template>
+</view>
+<template name="zcSelectEle">
+  <view class="element select-ele js-form-ele" style="{{data.style}}">
+    <view class="select-container">
+      <label class="title" style='{{data.titleStyle}}'>{{data.content.title}}</label>
+      <checkbox-group class="checkbox-group" wx:if="{{data.customFeature.selectAmount > 1}}">
+        <view class="checkbox" wx:for="{{data.content.lists}}">
+          {{item}}
+          <checkbox value="{{item}}"/>
+        </view>
+      </checkbox-group>
+      <radio-group class="radio-group" wx:else>
+        <view class="radio" wx:for="{{data.content.lists}}">
+          {{item}}
+          <radio value="{{item}}"/>
+        </view>
+      </radio-group>
+    </view>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcSelectEle" data="{{data:data.content[3]}}"></template>
+</view>
+<template name="zcTextareaEle">
+  <view class="element textarea-ele js-form-ele" style="{{data.style}}">
+    <textarea placeholder="{{!!data.customFeature.placeholder? data.customFeature.placeholder: ''}}"
+              data-datakey="{{data.parentCompid}}.form_data.{{data.customFeature.segment}}"
+              bindblur="inputChange"/>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcTextareaEle" data="{{data:data.content[4]}}"></template>
+</view>
+<template name="zcButton">
+  <label class="element button" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      {{data.content}}
+  </label>
+</template>
+<view class="ele-container">
+  <template is="zcButton" data="{{data:data.content[5]}}"></template>
+</view>
+
+  </form>
+</template>
+<view class="ele-container">
+  <template is="zcFormVessel2" data="{{data:form_vessel2}}"></template>
+</view>
+
+</view>

@@ -59,7 +59,7 @@ var pageData    = {
                 continue;
               }
 
-              let matchResult = description && description.match(/<p>[\s\S]*?<\/p>/g);
+              let matchResult = typeof description == 'string' && description.match(/<p>[\s\S]*?<\/p>/g);
               if (matchResult) {
                 newdata['detail_data'][i] = WxParse('html', newdata['detail_data'][i]);
               }
@@ -142,7 +142,7 @@ var pageData    = {
                     continue;
                   }
 
-                  let matchResult = description && description.match(/<p>[\s\S]*?<\/p>/g);
+                  let matchResult = typeof description == 'string' && description.match(/<p>[\s\S]*?<\/p>/g);
                   if (matchResult) {
                     res.data[j].form_data[k] = WxParse('html', res.data[j].form_data[k]);
                   }
@@ -331,7 +331,7 @@ var pageData    = {
                   continue;
                 }
 
-                let matchResult = description && description.match(/<p>[\s\S]*?<\/p>/g);
+                let matchResult = typeof description == 'string' && description.match(/<p>[\s\S]*?<\/p>/g);
                 if (matchResult) {
                   res.data[j].form_data[k] = WxParse('html', res.data[j].form_data[k]);
                 }
@@ -780,7 +780,7 @@ var pageData    = {
                   continue;
                 }
 
-                let matchResult = description && description.match(/<p>[\s\S]*?<\/p>/g);
+                let matchResult = typeof description == 'string' && description.match(/<p>[\s\S]*?<\/p>/g);
                 if (matchResult) {
                   res.data[j].form_data[k] = WxParse('html', res.data[j].form_data[k]);
                 }

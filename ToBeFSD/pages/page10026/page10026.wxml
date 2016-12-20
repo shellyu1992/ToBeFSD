@@ -56,6 +56,7 @@
     <template is="zcText" data="{{data:text2, real_value:item.form_data.FET_title}}"></template>
   </block>
 </view>
+
 <template name="zcCountEle">
   <block wx:if="{{!!form}}">
     <view class="element count-ele" style="{{data.style}}" data-form="{{form}}" data-objrel="{{form}}_{{data_id}}{{!!data.ifAutoCount? '_view': ''}}" data-index="{{index}}" catchtap="changeCount" data-compid="count_ele3" data-counted="{{has_count}}" data-parentcompid="{{data.parentCompid}}">
@@ -97,5 +98,6 @@
     <template is="zcText" data="{{data:text4, real_value:item.form_data.FET_content}}"></template>
   </block>
 </view>
+
 
 </view>

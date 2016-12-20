@@ -31,6 +31,7 @@
     <template is="zcText" data="{{data:text1}}"></template>
   </block>
 </view>
+
 <view class="ele-container">
   <block wx:if="{{real_value}}">
     <template is="zcText" data="{{data:text2}}"></template>
@@ -45,6 +46,7 @@
     <template is="zcText" data="{{data:text2}}"></template>
   </block>
 </view>
+
 <template name="zcLayoutVessel3">
   <view class="element layout-vessel clearfix" style="{{data.style}}" data-event-params="{{data.eventParams}}"
         catchtap="{{data.eventHandler}}">
@@ -63,6 +65,7 @@
     <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
   </block>
 </view>
+
 
 </view>
 <view class="cell border-cell" style="{{data.cell_style_2}}">
@@ -122,6 +125,7 @@
     <template is="zcText" data="{{data:data.content.leftEles[0]}}"></template>
   </block>
 </view>
+
 
 </view>
 <view class="cell border-cell" style="{{data.cell_style_2}}">

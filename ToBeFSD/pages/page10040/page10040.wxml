@@ -1,0 +1,69 @@
+<view class="app">
+<template name="zcFormVessel1">
+  <form class="element form-vessel" data-form="{{data.form}}" style="{{data.style}}"
+        bindsubmit="submitForm"
+        data-compid="form_vessel1"
+        data-fieldinfo="{{data.field_info}}"
+  >
+    <template name="zcTextareaEle">
+  <view class="element textarea-ele js-form-ele" style="{{data.style}}">
+    <textarea placeholder="{{!!data.customFeature.placeholder? data.customFeature.placeholder: ''}}"
+              data-datakey="{{data.parentCompid}}.form_data.{{data.customFeature.segment}}"
+              bindblur="inputChange"/>
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcTextareaEle" data="{{data:data.content[0]}}"></template>
+</view>
+<template name="zcInputEle">
+  <view class="element input-ele js-form-ele " style="{{data.style}}">
+    <input type="text" placeholder="{{!!data.customFeature.placeholder? data.customFeature.placeholder: ''}}"
+           data-datakey="{{data.parentCompid}}.form_data.{{data.customFeature.segment}}"
+           bindchange="inputChange"
+    />
+  </view>
+</template>
+<view class="ele-container">
+  <template is="zcInputEle" data="{{data:data.content[1]}}"></template>
+</view>
+<template name="zcButton">
+  <label class="element button" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      {{data.content}}
+  </label>
+</template>
+<view class="ele-container">
+  <template is="zcButton" data="{{data:data.content[2]}}"></template>
+</view>
+
+  </form>
+</template>
+<view class="ele-container">
+  <template is="zcFormVessel1" data="{{data:form_vessel1}}"></template>
+</view>
+<template name="zcPicture">
+  <block wx:if="{{real_value}}">
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{real_value}}"></image>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="element picture" style="{{data.style}}" data-event-params="{{data.eventParams}}" catchtap="{{data.eventHandler}}">
+      <image src="{{data.content}}"></image>
+    </view>
+  </block>
+</template>
+<view class="ele-container">
+  <block wx:if="{{real_value}}">
+    <template is="zcPicture" data="{{data:picture2}}"></template>
+  </block>
+  <block wx:elif="{{detail_data && !vessel_page_data.form_data}}">
+    <template is="zcPicture" data="{{data:picture2}}"></template>
+  </block>
+  <block wx:elif="{{vessel_page_data.form_data}}">
+      <template is="zcPicture" data="{{data:picture2}}"></template>
+  </block>
+  <block wx:else>
+    <template is="zcPicture" data="{{data:picture2}}"></template>
+  </block>
+</view>
+</view>

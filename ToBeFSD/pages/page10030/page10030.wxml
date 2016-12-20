@@ -56,6 +56,7 @@
     <template is="zcText" data="{{data:text2, real_value:item.form_data.FET_title}}"></template>
   </block>
 </view>
+
 <view class="ele-container">
   <block wx:if="{{real_value}}">
     <template is="zcText" data="{{data:text3, real_value:real_value.form_data.FET_Author}}"></template>
@@ -70,6 +71,7 @@
     <template is="zcText" data="{{data:text3, real_value:item.form_data.FET_Author}}"></template>
   </block>
 </view>
+
 <view class="ele-container">
   <block wx:if="{{real_value}}">
     <template is="zcText" data="{{data:text4, real_value:real_value.form_data.FET_content}}"></template>
@@ -84,5 +86,6 @@
     <template is="zcText" data="{{data:text4, real_value:item.form_data.FET_content}}"></template>
   </block>
 </view>
+
 
 </view>

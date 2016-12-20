@@ -4,7 +4,6 @@ App({
     if(userInfo = wx.getStorageSync('userInfo')){
       this.globalData.userInfo = userInfo;
     }
-    // this.checkLogin(this.sendSessionKey, this.login);
   },
   getAppData: function(){
     wx.request({
@@ -71,7 +70,6 @@ App({
       },
       success: function(res) {
         if(res.statusCode && res.statusCode != 200){
-        // 调用微信api报错
           that.showModal({
             content: ''+res.errMsg
           });
@@ -79,12 +77,10 @@ App({
         }
         if(res.data.status){
           if(res.data.status == 401){
-          // 未登录
             that.login();
             return;
           }
           if(res.data.status != 0){
-          // 请求未成功
             that.showModal({
               content: ''+res.data.data
             });
@@ -277,6 +273,9 @@ App({
         code: code
       },
       success: function(res){
+        if(res.is_login == 2) {
+          that.globalData.notBindXcxAppId = true;
+        }
         that.setSessionKey(res.data);
         that.requestUserInfo(res.is_login);
         typeof afterLoginCallback == 'function' && afterLoginCallback();
@@ -307,10 +306,9 @@ App({
         url: '/index.php?r=AppUser/onLogin',
         success: function(res){
           if(!res.is_login){
-            // 如果没有登录
             that.login(afterLoginCallback);
+            return;
           } else if(res.is_login == 2) {
-            // 没有绑定appId
             that.globalData.notBindXcxAppId = true;
           }
           that.requestUserInfo(res.is_login);
@@ -324,9 +322,9 @@ App({
 
   },
   requestUserInfo: function(is_login){
-	if(is_login==1){
+    if(is_login==1){
       this.requestUserXcxInfo();
-    } else if(is_login==0) {
+    } else {
       this.requestUserWxInfo();
     }
   },
@@ -372,7 +370,7 @@ App({
       },
       success: function(res){
         if(res.status == 0){
-          that.setUserInfo(res.data.userInfo);
+          that.setUserInfo(res.data.user_info);
         }
       },
       fail: function(res){
@@ -382,20 +380,7 @@ App({
   },
   checkLogin: function(success, fail, afterLoginCallback){
     var that = this;
-    // console.log('before checkSession');
     success(afterLoginCallback);
-    // wx.checkSession({
-    //   success: function(){
-    //     //登录态未过期
-    //     console.log('checkSession success');
-    //     success(afterLoginCallback);
-    //   },
-    //   fail: function(){
-    //     //登录态过期
-    //     console.log('checkSession fail');
-    //     fail(afterLoginCallback);
-    //   }
-    // })
   },
 
 
@@ -469,7 +454,6 @@ App({
   },
   getSessionKey: function(){
     return this.globalData.sessionKey;
-    // return wx.getStorageSync('session_key');
   },
   setSessionKey: function(session_key){
     this.globalData.sessionKey = session_key;

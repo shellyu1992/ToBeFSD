@@ -1,4 +1,3 @@
-// HTML 支持的数学符号
 function strNumDiscode(str){
     str = str.replace(/&forall;/g, '∀');
     str = str.replace(/&part;/g, '∂');
@@ -40,7 +39,6 @@ function strNumDiscode(str){
     return str;
 }
 
-//HTML 支持的希腊字母
 function strGreeceDiscode(str){
     str = str.replace(/&Alpha;/g, 'Α');
     str = str.replace(/&Beta;/g, 'Β');
@@ -99,10 +97,7 @@ function strGreeceDiscode(str){
     return str;
 }
 
-//
-
 function strcharacterDiscode(str){
-    // 加入常用解析
     str = str.replace(/&nbsp;/g, ' ');
     str = str.replace(/&quot;/g, '"');
     str = str.replace(/&amp;/g, '&');
@@ -112,7 +107,6 @@ function strcharacterDiscode(str){
     return str;
 }
 
-// HTML 支持的其他实体
 function strOtherDiscode(str){
     str = str.replace(/&OElig;/g, 'Œ');
     str = str.replace(/&oelig;/g, 'œ');
@@ -172,8 +166,8 @@ function strOtherDiscode(str){
 }
 
 function strMoreDiscode(str){
-    str = str.replace(/\n(\t)*/g,"");  // 清除换行符
-    str = str.replace(/<!--[\s\S]*?-->/g,"");  // 清除注释
+    str = str.replace(/\n(\t)*/g,""); 
+    str = str.replace(/<!--[\s\S]*?-->/g,"");
 
     str = str.replace(/\r\n/g,"");
     str = str.replace(/\n\n/g,"\n");

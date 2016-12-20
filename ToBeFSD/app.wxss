@@ -2345,10 +2345,6 @@ a {
     margin: 0 5px;
     font-family:Courier, Calibri,"宋体";
 }
-view{
-    word-break:break-all; overflow:auto;
-}
-/*//标题 */
 .wxParse-div{margin: 0;padding: 0;}
 .wxParse-h1{ font-size:2em; margin: .67em 0 }
 .wxParse-h2{ font-size:1.5em; margin: .75em 0 }
@@ -2367,8 +2363,6 @@ view{
 .wxParse-sub{vertical-align:sub}
 .wxParse-sup{vertical-align:super}
 .wxParse-s,.wxParse-strike,.wxParse-del{text-decoration:line-through}
-/*wxparse-自定义个性化的css样式*/
-/*增加video的css样式*/
 
 .wxParse-a{
     color: deepskyblue;
@@ -2386,9 +2380,9 @@ view{
 }
 
 .wxParse-img{
-    padding: 2px;
+    /*padding: 2px;
     background-color: #efefef;
-    margin: 3px;
+    margin: 3px;*/
     overflow: hidden;
     text-align: center;
 }
@@ -2455,7 +2449,7 @@ view{
     margin-right: 5px;
 }
 .wxParse-text {
-    white-space: pre;
+    white-space: pre-wrap;
 }
 .wxParse-br {
     height: 22px;
